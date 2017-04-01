@@ -1,0 +1,34 @@
+piVersion: v1
+items:
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: kubernetes.io/aws-ebs
+    creationTimestamp: 2017-04-01T02:58:58Z
+    name: ebs-claim1
+    namespace: default
+    resourceVersion: "2613"
+    selfLink: /api/v1/namespaces/default/persistentvolumeclaims/ebs-claim1
+    uid: 267ad6c6-1687-11e7-8b31-02ac97858939
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 4Gi
+    storageClassName: slow
+    volumeName: pvc-267ad6c6-1687-11e7-8b31-02ac97858939
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 4Gi
+    phase: Bound
+kind: List
+metadata: {}
+resourceVersion: ""
+selfLink: ""
+

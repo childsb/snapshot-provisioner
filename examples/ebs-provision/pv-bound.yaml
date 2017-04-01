@@ -1,0 +1,41 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      kubernetes.io/createdby: aws-ebs-dynamic-provisioner
+      pv.kubernetes.io/bound-by-controller: "yes"
+      pv.kubernetes.io/provisioned-by: kubernetes.io/aws-ebs
+    creationTimestamp: 2017-04-01T02:58:58Z
+    labels:
+      failure-domain.beta.kubernetes.io/region: us-west-2
+      failure-domain.beta.kubernetes.io/zone: us-west-2b
+    name: pvc-267ad6c6-1687-11e7-8b31-02ac97858939
+    namespace: ""
+    resourceVersion: "2610"
+    selfLink: /api/v1/persistentvolumespvc-267ad6c6-1687-11e7-8b31-02ac97858939
+    uid: 26c8c4ce-1687-11e7-8b31-02ac97858939
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    awsElasticBlockStore:
+      fsType: ext4
+      volumeID: aws://us-west-2b/vol-01627e1fec5c2a4c8
+    capacity:
+      storage: 4Gi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: ebs-claim1
+      namespace: default
+      resourceVersion: "2608"
+      uid: 267ad6c6-1687-11e7-8b31-02ac97858939
+    persistentVolumeReclaimPolicy: Delete
+    storageClassName: slow
+  status:
+    phase: Bound
+kind: List
+metadata: {}
+resourceVersion: ""
+selfLink: ""

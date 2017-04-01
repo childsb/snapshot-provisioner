@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: flex-provisioner
+spec:
+  containers:
+    - name: flex-provisioner
+      image: childsb/flex-provisioner
+      securityContext:
+      args:
+        - "-provisioner=external/snap-simple"
+        - "-execCommand=/opt/storage/scripts/snap-provision.sh"
+      imagePullPolicy: "IfNotPresent"
+
